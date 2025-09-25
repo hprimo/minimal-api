@@ -22,7 +22,7 @@ namespace Test.Mocks
                 Id = 2,
                 Email = "editor@teste.com",
                 Senha = "Editor",
-                Perfil = "Adm"
+                Perfil = "Editor"
             }
         };
         public Administrador BuscaPorId(int? id)

@@ -25,10 +25,12 @@ namespace minimal_api.Dominio.Servicos
             _contexto.SaveChanges();
         }
 
-        public void Atualizar(Veiculo veiculo)
+        public Veiculo? Atualizar(Veiculo veiculo)
         {
             _contexto.Veiculos.Update(veiculo);
             _contexto.SaveChanges();
+
+            return veiculo;
         }
 
         public Veiculo? BuscaPorId(int? id)
@@ -36,10 +38,12 @@ namespace minimal_api.Dominio.Servicos
             return _contexto.Veiculos.Where(v => v.Id == id).FirstOrDefault();
         }
 
-        public void Incluir(Veiculo veiculo)
+        public Veiculo Incluir(Veiculo veiculo)
         {
             _contexto.Veiculos.Add(veiculo);
             _contexto.SaveChanges();
+
+            return veiculo;
         }
 
         public List<Veiculo> Todos(int? pagina = 1, string? nome = null, string? marca = null)

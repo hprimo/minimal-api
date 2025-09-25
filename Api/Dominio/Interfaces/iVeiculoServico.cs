@@ -11,8 +11,8 @@ namespace minimal_api.Dominio.Interfaces
     {
         List<Veiculo> Todos(int? pagina = 1, string? nome = null, string? marca = null);
         Veiculo? BuscaPorId(int? id);
-        void Incluir(Veiculo veiculo);
-        void Atualizar(Veiculo veiculo);
+        Veiculo Incluir(Veiculo veiculo);
+        Veiculo? Atualizar(Veiculo veiculo);
         void Apagar(Veiculo veiculo);
     }
 }
