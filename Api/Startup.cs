@@ -91,6 +91,16 @@ public class Startup
         }
         );
 
+        services.AddCors(options =>
+        {
+            options.AddDefaultPolicy(builder =>
+            {
+                builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+            });
+        });
+
         #endregion Builder
     }
 
@@ -104,6 +114,8 @@ public class Startup
         app.UseRouting();
 
         app.UseAuthorization();
+
+        app.UseCors();
 
         app.UseEndpoints(endpoints =>
         {
